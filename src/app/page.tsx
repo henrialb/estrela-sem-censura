@@ -1,12 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { AddPost } from '@/components/AddPost';
 import { HeaderBar } from '@/components/HeaderBar';
 import PostCard from '@/components/PostCard';
 import { useAuth } from '@/contexts/AuthContext';
 import { publicApi } from '@/lib/api';
 import type { Comment, Post } from '@/types';
-import { AddPost } from '@/components/AddPost';
 
 export default function Home() {
   const { loading } = useAuth();
@@ -54,7 +54,7 @@ export default function Home() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-xl">Loading...</div>
+        <div className="text-xl">A carregar...</div>
       </div>
     );
   }
@@ -67,11 +67,11 @@ export default function Home() {
         <AddPost onPostAdded={handlePostAdded} />
         {postsLoading ? (
           <div className="text-center py-8">
-            <div className="text-xl">Loading posts...</div>
+            <div className="text-xl">A carregar publicações...</div>
           </div>
         ) : posts.length === 0 ? (
           <div className="text-center py-8">
-            <div className="text-xl text-gray-600">No posts available.</div>
+            <div className="text-xl text-gray-600">Sem publicações.</div>
           </div>
         ) : (
           <div>

@@ -56,7 +56,7 @@ export const AddPost = ({ onPostAdded }: AddPostProps) => {
           disabled={isSubmitting || !newPost.trim()}
           className="bg-blue-600 hover:bg-blue-700 hover:not-disabled:cursor-pointer disabled:bg-gray-400 text-white px-4 py-2 rounded-lg"
         >
-          {isSubmitting ? 'A publicar...' : 'Publicar'}
+          {isSubmitting ? 'A processar...' : 'Adicionar'}
         </button>
       </form>
     </div>
